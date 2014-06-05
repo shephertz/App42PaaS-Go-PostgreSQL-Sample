@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>App42 PaaS Go PostgreSQL Sample</title>
+    <link href="/public/css/style-User-Input-Form.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="App42PaaS_header_wrapper">
+    <div class="App42PaaS_header_inner">
+        <div class="App42PaaS_header">
+            <div class="logo">
+                <a href="/"><img border="0" alt="App42PaaS" src="/public/images/logo.png" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="App42PaaS_body_wrapper">
+    <div class="App42PaaS_body">
+        <div class="App42PaaS_body_inner">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Description</th>
+                </tr>
+                {{ range . }}
+                <tr>
+                    <td>{{.Name}}</td>
+                    <td>{{.Email}}</td>
+                    <td>{{.Description}}</td>
+                </tr>
+                {{ end }}
+            </table>
+
+            <a href="/new/">New User</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
