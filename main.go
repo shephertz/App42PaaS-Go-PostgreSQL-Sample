@@ -20,9 +20,11 @@ var (
 )
 
 const (
-	DB_USER = "postgres"
-	DB_PASSWORD = "ankit1234"
-	DB_NAME = "go_posgres_db"
+	DB_USER = "USER"
+	DB_PASSWORD = "PASSWORD"
+	DB_NAME = "DATABASE NAME"
+	DB_PORT = "VM PORT"
+	DB_HOST = "VM HOST"
 )
 
 type User struct {
@@ -32,7 +34,7 @@ type User struct {
 }
 
 func setupDB() *sql.DB {
-	dbInfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", DB_USER, DB_PASSWORD, DB_NAME )
+	dbInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME )
 	db, err := sql.Open("postgres", dbInfo)
 	PanicIf(err)
 	return db
